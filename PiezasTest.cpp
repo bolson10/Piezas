@@ -18,3 +18,12 @@ TEST(PiezasTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+
+TEST(PiezasTest, check_if_dropPiece_works_row0_col0)
+{
+	Piezas game;
+	game.dropPiece(0);
+	ASSERT_EQ(game.pieceAt(0,0),X);
+}
+
+
