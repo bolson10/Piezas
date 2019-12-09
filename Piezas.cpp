@@ -1,4 +1,5 @@
 #include "Piezas.h"
+#include<iostream>
 #include <vector>
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
