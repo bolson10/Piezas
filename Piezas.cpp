@@ -23,11 +23,17 @@
 **/
 Piezas::Piezas()
 {
-	std::cout<<"aaa\n";
 	turn = X;
+	std::cout<<"aaa\n";
+	vector < std::vector<Piece> >v(BOARD_ROWS);
 	for(int i = 0; i < BOARD_ROWS; i++)
+	{
 		for(int j = 0; j < BOARD_COLS; j++)
-			board[i][j] = Blank;
+		{
+			board[i].push_back(Blank);
+		}
+	}
+	board = v;
 	std::cout<<"yerr\n";
 }
 
