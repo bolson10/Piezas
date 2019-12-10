@@ -43,3 +43,59 @@ TEST(PiezasTest, check_if_dropPiece_works_row2_col0)
 	ASSERT_EQ(game.pieceAt(2,0),X);
 }
 
+TEST(PiezasTest, check_if_dropPiece_works_row0_col1)
+{
+	Piezas game;
+	game.dropPiece(1);
+	ASSERT_EQ(game.pieceAt(0,1),X);
+}
+
+TEST(PiezasTest, check_if_dropPiece_works_row1_col1)
+{
+	Piezas game;
+	game.dropPiece(1);
+	game.dropPiece(1);
+	ASSERT_EQ(game.pieceAt(1,1),O);
+}
+
+TEST(PiezasTest, check_if_dropPiece_works_row2_col1)
+{
+	Piezas game;
+	game.dropPiece(1);
+	game.dropPiece(1);
+	game.dropPiece(1);
+	ASSERT_EQ(game.pieceAt(2,1),X);
+}
+
+TEST(PiezasTest, check_if_dropPiece_works_row0_col2)
+{
+	Piezas game;
+	game.dropPiece(2);
+	ASSERT_EQ(game.pieceAt(0,2),X);
+}
+
+TEST(PiezasTest, check_if_dropPiece_works_row1_col2)
+{
+	Piezas game;
+	game.dropPiece(2);
+	game.dropPiece(2);
+	ASSERT_EQ(game.pieceAt(1,2),O);
+}
+
+TEST(PiezasTest, check_if_dropPiece_works_row2_col2)
+{
+	Piezas game;
+	game.dropPiece(2);
+	game.dropPiece(2);
+	game.dropPiece(2);
+	ASSERT_EQ(game.pieceAt(2,2),X);
+}
+
+TEST(PiezasTest, check_reset_on_one_piece)
+{
+	Piezas game;
+	game.dropPiece(0);
+	game.reset();
+	ASSERT_EQ(game.pieceAt(0,0),Blank);
+
+}
