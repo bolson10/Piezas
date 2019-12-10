@@ -25,7 +25,7 @@ Piezas::Piezas()
 {
 	turn = X;
 	std::cout<<"aaa\n";
-	vector < std::vector<Piece> >v(BOARD_ROWS);
+	std::vector < std::vector<Piece> > v(BOARD_ROWS);
 	for(int i = 0; i < BOARD_ROWS; i++)
 	{
 		for(int j = 0; j < BOARD_COLS; j++)
