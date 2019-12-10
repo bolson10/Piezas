@@ -30,7 +30,7 @@ Piezas::Piezas()
 	{
 		for(int j = 0; j < BOARD_COLS; j++)
 		{
-			board[i].push_back(Blank);
+			v[i].push_back(Blank);
 		}
 	}
 	board = v;
