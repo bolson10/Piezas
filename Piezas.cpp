@@ -1,5 +1,4 @@
 #include "Piezas.h"
-#include<iostream>
 #include <vector>
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
@@ -24,7 +23,6 @@
 Piezas::Piezas()
 {
 	turn = X;
-	std::cout<<"aaa\n";
 	std::vector < std::vector<Piece> > v(BOARD_ROWS);
 	for(int i = 0; i < BOARD_ROWS; i++)
 	{
@@ -34,7 +32,6 @@ Piezas::Piezas()
 		}
 	}
 	board = v;
-	std::cout<<"yerr\n";
 }
 
 /**
