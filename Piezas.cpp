@@ -103,7 +103,19 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-//	for()
-//		for()
-    return Blank;
+  int maxX = 0;
+  int maxO = 0;
+	for(int i = 0; i < BOARD_ROWS; i++)
+	{
+		for(int j = 0; j < BOARD_COLS; j++)
+		{
+		  if(board[i][j] == Blank)
+		    return Invalid;
+		}
+	}
+	if(maxX > maxO)
+	  return X;
+	else if(maxX < maxO)
+	  return O;
+	return Blank;
 }
