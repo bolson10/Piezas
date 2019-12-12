@@ -99,3 +99,40 @@ TEST(PiezasTest, check_reset_on_one_piece)
 	ASSERT_EQ(game.pieceAt(0,0),Blank);
 
 }
+
+TEST(PiezasTest, check_if_gameState_works_win_O)
+{
+  Piezas game;
+  game.dropPiece(0);
+  game.dropPiece(1);
+  game.dropPiece(0);
+  game.dropPiece(2);
+  game.dropPiece(2);
+  game.dropPiece(3);
+  game.dropPiece(3);
+  game.dropPiece(1);
+  game.dropPiece(3);
+  game.dropPiece(2);
+  game.dropPiece(1);
+  game.dropPiece(0);
+  ASSERT_EQ(game.gameState(),O);
+}
+/*
+TEST(PiezasTest, check_if_gameState_works_win_X)
+{
+  Piezas game;
+  game.dropPiece(0);
+  game.dropPiece(1);
+  game.dropPiece(0);
+  game.dropPiece(3);
+  game.dropPiece(0);
+  game.dropPiece(2);
+  game.dropPiece(1);
+  game.dropPiece(2);
+  game.dropPiece(2);
+  game.dropPiece(3);
+  game.dropPiece(3);
+  game.dropPiece();
+  ASSERT_EQ(game.gameState(),O);
+}
+*/

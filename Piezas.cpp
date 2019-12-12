@@ -111,6 +111,32 @@ Piece Piezas::gameState()
 		{
 		  if(board[i][j] == Blank)
 		    return Invalid;
+		  int Mlen = 0;
+		  int lenHoriz = 0;
+		  int lenVert = 0;
+		  Piece pc = board[i][j];
+		  for(int k = j; k < BOARD_COLS; k++)
+		  {
+		    if(board[i][k] == pc)
+		      lenHoriz += 1;
+		    else
+		      break;
+		  }
+		  Mlen = lenHoriz;
+		  for(int l = i; l < BOARD_ROWS; l++)
+		  {
+		    if(board[l][j] == pc)
+		      lenVert += 1;
+		    else
+		      break;
+		  }
+		  if(lenVert > Mlen)
+		    Mlen = lenVert;
+		  
+		  if(pc == X && Mlen > maxX)
+		    maxX = Mlen;
+		  else if(pc == O && Mlen > maxO)
+		    maxO = Mlen;
 		}
 	}
 	if(maxX > maxO)
