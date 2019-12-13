@@ -18,11 +18,19 @@ TEST(PiezasTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
-TEST(PiezasTest, check_if_dropPiece_catches_out_of_bounds_value)
+TEST(PiezasTest, check_if_dropPiece_catches_out_of_bounds_value_O)
 {
 	Piezas game;
 	ASSERT_EQ(game.dropPiece(4),Invalid);
 }
+
+TEST(PiezasTest, check_if_dropPiece_catches_out_of_bounds_value_X)
+{
+  Piezas game;
+  game.dropPiece(0);
+  ASSERT_EQ(game.dropPiece(4),Invalid);
+}
+
 TEST(PiezasTest, check_if_dropPiece_returns_blank_on_full_column)
 {
 	Piezas game;
@@ -117,6 +125,12 @@ TEST(PiezasTest, check_reset_on_one_piece)
 	ASSERT_EQ(game.pieceAt(0,0),Blank);
 
 }
+TEST(PiezasTest, check_if_gameState_sees_unfinished_game)
+{
+  Piezas game;
+  game.dropPiece(0);
+  ASSERT_EQ(game.gameState(),Invalid);
+}
 
 TEST(PiezasTest, check_if_gameState_works_win_O)
 {
@@ -154,4 +168,23 @@ TEST(PiezasTest, check_if_gameState_works_win_X)
   game.dropPiece();
   ASSERT_EQ(game.gameState(),O);
 }
+ TEST(PiezasTest, check_if_gameState_works_tie)
+ {
+ Piezas game;
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ game.dropPiece();
+ ASSERT_EQ(game.gameState(),Blank);
+ }
+
+ 
 */
