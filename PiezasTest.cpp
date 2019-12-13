@@ -18,6 +18,24 @@ TEST(PiezasTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+TEST(PiezasTest, check_if_dropPiece_catches_out_of_bounds_value)
+{
+	Piezas game;
+	ASSERT_EQ(game.dropPiece(4),Invalid);
+}
+TEST(PiezasTest, check_if_dropPiece_returns_blank_on_full_column)
+{
+	Piezas game;
+	game.dropPiece(0);
+	game.dropPiece(0);
+	game.dropPiece(0);
+	ASSERT_EQ(game.dropPiece(0),Blank);
+}
+TEST(PiezasTest, check_if_pieceAt_catches_out_of_bounds_value)
+{
+	Piezas game;
+	ASSERT_EQ(game.pieceAt(4,4),Invalid);
+}
 
 TEST(PiezasTest, check_if_dropPiece_works_row0_col0)
 {
@@ -117,6 +135,7 @@ TEST(PiezasTest, check_if_gameState_works_win_O)
   game.dropPiece(0);
   ASSERT_EQ(game.gameState(),O);
 }
+
 /*
 TEST(PiezasTest, check_if_gameState_works_win_X)
 {
