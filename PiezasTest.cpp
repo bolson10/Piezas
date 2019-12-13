@@ -128,12 +128,14 @@ TEST(PiezasTest, check_if_pieceAt_works_row2_col2)
 	ASSERT_EQ(game.pieceAt(2,2),X);
 }
 
-TEST(PiezasTest, check_reset_on_one_piece)
+TEST(PiezasTest, check_reset)
 {
 	Piezas game;
 	game.dropPiece(0);
+	game.dropPiece(0);
+	game.dropPiece(0);
 	game.reset();
-	ASSERT_EQ(game.pieceAt(0,0),Blank);
+	ASSERT_EQ(game.pieceAt(1,0),Blank);
 
 }
 TEST(PiezasTest, check_if_gameState_sees_unfinished_game)
